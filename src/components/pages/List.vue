@@ -9,7 +9,7 @@
       <tr v-for="(contact, index) in getListFiltered" :key="index" :class="{'list__new-line': showColoredRow && getLastAdded.id == contact.id}">
         <td>
           <span class="list__tag-name">{{contact.name[0]}}</span>
-          <span>{{contact.name}}</span>
+          <span >{{contact.name}}</span>
         </td>
         <td>{{contact.email}}</td>
         <td>{{contact.cellphone}}</td>
@@ -111,12 +111,19 @@ export default {
     background-color: #fff3f2;
   }
   .list__tag-name{
+    text-transform: uppercase;
+    padding-bottom: 3px !important;
+    font-size: 1rem !important;
+    margin-top: 0px !important;
+    margin-right: 1rem;
     border-radius: 15px;
     color: white;
     width: 1.5rem;
     height: 1.5rem;
     margin: 0 1rem 0 0;
-    padding: 0.188rem 0.313rem 0.125rem 0.375rem;
+    padding: 2px;
+    padding-right: 7px;
+    padding-left: 7px;
     background-color: #fa8d68;
   }
   .list__action {
@@ -126,7 +133,7 @@ export default {
   .list__action__edit{
     cursor: pointer;
     background: none;
-    margin-right: 5px;
+    margin-right: 20px;
   }
   .list__action_delete {
     cursor: pointer;
@@ -167,4 +174,9 @@ export default {
     border: groove;
     border-color: #f8f9fd2b;
   }
+  tr:hover td {
+    background-color: #fff3f2;
+    transition: 0.3s;
+    }
+
 </style>
