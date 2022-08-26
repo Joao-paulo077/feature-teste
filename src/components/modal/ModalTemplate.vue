@@ -1,10 +1,9 @@
 <template>
   <transition name="modal">
-    <div class="modal-mask">
-      <div class="modal-wrapper">
-        
-        <div class="modal-container">
-          <div class="modal-header">
+    <div class="modal">
+      <div class="modal__wrapper">      
+        <div class="modal__wrapper__container">
+          <div class="modal__wrapper__container__header">
             <h3>
               <slot name="title"/>
             </h3>
@@ -12,10 +11,10 @@
           <div>
            
           </div>
-          <div class="modal-body">
+          <div class="modal__wrapper__container__body">
             <slot name="body"/>
           </div>
-          <div class="modal-actions">
+          <div class="modal__wrapper__container__actions">
             <slot name="actions"/>
           </div>
         </div>
@@ -34,7 +33,7 @@ export default {
   #text-input {
     width: 8rem !important;
   }
-  .modal-mask {
+  .modal {
     position: fixed;
     z-index: 9998;
     top: 0;
@@ -52,12 +51,12 @@ export default {
     margin: 0px;
   }
 
-  .modal-wrapper {
+  .modal__wrapper {
     display: table-cell;
     vertical-align: middle;
   }
 
-  .modal-container {
+  .modal__wrapper__container {
     width: 27rem;
     height: 21.375rem;
     margin: 0px auto;
@@ -72,7 +71,7 @@ export default {
     align-items: flex-start;
   }
 
-  .modal-header {
+  .modal__wrapper__container__header {
     height: 2.969rem;
     width: 100%;
     justify-content: flex-start;
@@ -82,7 +81,7 @@ export default {
     border-bottom: solid 1px #c0c3d2;;
   }
 
-  .modal-header h3 {
+  .modal__wrapper__container__header h3 {
     width: 8.25rem;
     height: 1.188rem;
     margin-left: 1rem;
@@ -98,7 +97,7 @@ export default {
     display: flex;
   }
   
-  .modal-actions{
+  .modal__wrapper__container__actions{
     border-top: solid 1px #c0c3d2;
     height: 4rem;
     width: 100%;

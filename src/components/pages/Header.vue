@@ -5,7 +5,7 @@
         <img src="../../assets/ubook.svg" alt="ubook">
       </div>
       <div class="search__actions">
-        <ButtonAdd  v-if="showAddButton" />
+        <ButtonAdd v-if="showAddButton" />
       </div>
       <input class="search__input" type="text" v-model="inputSearch" placeholder="Buscar..." @input="setFilter"  />
       <span id="search__input__icon">

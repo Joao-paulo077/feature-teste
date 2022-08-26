@@ -6,9 +6,9 @@
         <th>E-mail</th>
         <th>Telefone</th>
       </tr>
-      <tr v-for="(contact, index) in getListFiltered" :key="index" :class="{'list__new-line': showColoredRow && getLastAdded.id == contact.id}">
+      <tr class="list__table__body" v-for="(contact, index) in getListFiltered" :key="index" :class="{'list__new-line': showColoredRow && getLastAdded.id == contact.id}">
         <td>
-          <span class="list__tag-name">{{contact.name[0]}}</span>
+          <span class="list__tag-name" :style="{'background-color': randomColor()}">{{contact.name[0]}}</span>
           <span >{{contact.name}}</span>
         </td>
         <td>{{contact.email}}</td>
@@ -59,6 +59,9 @@ export default {
     ...mapActions('contact', [
       'initStateValuesFromLocalStorage'
     ]),
+    randomColor(){
+      return `#${Math.floor(Math.random()*16777215).toString(16)}`
+    },
     closeModal() {
       this.openDialog = false;
     },
@@ -122,9 +125,8 @@ export default {
     height: 1.5rem;
     margin: 0 1rem 0 0;
     padding: 2px;
-    padding-right: 7px;
+    padding-right: 6px;
     padding-left: 7px;
-    background-color: #fa8d68;
   }
   .list__action {
     display: flex;
@@ -152,6 +154,7 @@ export default {
     letter-spacing: normal;
   }
   .list {
+    background-color: #f8f9fd;
     display: flex;
     width: 95% !important;
     justify-content: center;
@@ -174,9 +177,9 @@ export default {
     border: groove;
     border-color: #f8f9fd2b;
   }
-  tr:hover td {
+  .list__table__body:hover td {
     background-color: #fff3f2;
     transition: 0.3s;
-    }
+  }
 
 </style>
